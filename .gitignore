@@ -1,0 +1,53 @@
+# Restricted research inputs and generated individual-level outputs
+/private/
+/data/*
+!/data/README.md
+!/data/restricted_input_schema.csv
+/outputs/
+/results/
+/results_*/
+!/results_public/
+/publication*/
+/editorial/
+/submission/
+/provenance*/
+/qa/
+
+# Only audited aggregate data belong in version control
+*.csv
+!results_public/**/*.csv
+!data/restricted_input_schema.csv
+*.json
+!results_public/**/*.json
+
+# Fitted models, individual predictions and unpublished document packages
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+*.parquet
+*.feather
+*.rds
+*.RData
+*.zip
+*.docx
+*.dot
+*.pdf
+*.png
+!results_public/figures/*.pdf
+!results_public/figures/*.png
+
+# Local environments, credentials and editor/runtime files
+.env
+.env.*
+*.pem
+*.key
+.venv*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+.idea/
+.vscode/

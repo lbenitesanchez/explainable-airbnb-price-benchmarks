@@ -1,0 +1,61 @@
+column,dtype,origin,role,definition,in_restricted_export
+listings_id,object,raw,direct_identifier_not_exported,Original source column preserved without value changes.,False
+listing_url,object,raw,direct_identifier_not_exported,Original source column preserved without value changes.,False
+last_scraped,object,raw,raw_preserved,Original source column preserved without value changes.,True
+name,object,raw,text_restricted,Raw free text; fit all text transformations inside each training fold only.,True
+description,object,raw,text_restricted,Raw free text; fit all text transformations inside each training fold only.,True
+host_id,object,raw,direct_identifier_not_exported,Original source column preserved without value changes.,False
+host_url,object,raw,direct_identifier_not_exported,Original source column preserved without value changes.,False
+host_is_superhost,bool,raw,raw_preserved,Original source column preserved without value changes.,True
+neighbourhood,object,raw,raw_preserved,Original source column preserved without value changes.,True
+latitude,float64,raw,location_restricted,"Exact inherited location, not de-identified for public release.",True
+longitude,float64,raw,location_restricted,"Exact inherited location, not de-identified for public release.",True
+property_type,object,raw,raw_preserved,Original source column preserved without value changes.,True
+accommodates,int64,raw,raw_preserved,Original source column preserved without value changes.,True
+bathrooms_text,object,raw,raw_preserved,Original source column preserved without value changes.,True
+bathrooms,int64,raw,raw_audit_only,"Archived processed count, known to contain conversion errors. Use cleaned_bathrooms in models.",True
+bedrooms,int64,raw,raw_preserved,Original source column preserved without value changes.,True
+beds,int64,raw,raw_preserved,Original source column preserved without value changes.,True
+ammenities,object,raw,raw_preserved,Original source column preserved without value changes.,True
+price,float64,raw,target,"Posted nightly price in Peruvian soles (PEN), confirmed by the author. Original recorded values are unchanged; no currency conversion, winsorization or transformation.",True
+number_of_reviews,int64,raw,raw_preserved,Original source column preserved without value changes.,True
+review_scores_rating,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+review_scores_cleanliness,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+review_scores_accuracy,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+review_scores_checkin,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+review_scores_communication,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+review_scores_location,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+review_scores_value,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+sentiment_label_listing,object,raw,raw_preserved,Original source column preserved without value changes.,True
+sentiment_score_listing,float64,raw,unverified_auxiliary,Inherited score; upstream model and score semantics unavailable. Exclude from confirmatory core until documented.,True
+geometry,object,raw,location_restricted,"Exact inherited location, not de-identified for public release.",True
+dist_recreacion_m,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+dist_hospital_m,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+dist_parque_m,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+dist_universidad_m,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+dist_colegio_m,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+dist_tienda_m,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+dist_estacion_bus_m,float64,raw,raw_preserved,Original source column preserved without value changes.,True
+source_row_index,int64,derived,audit_only,Zero-based physical row position in source CSV; never a predictor.,True
+row_id,object,derived,grouping_only,"SHA256 of namespace and listing ID, truncated to 24 hex; stable under row reordering.",True
+host_group,object,derived,grouping_only,"Domain-separated SHA256 of host ID; grouping only, never a predictor.",True
+cleaned_bathrooms,float64,derived,structural,"Parse explicit decimal/comma, half=0.5, no bath=0; '-' remains missing. No imputation.",True
+bathroom_text_missing,int64,derived,missingness,1 when bathroom text cannot supply a numeric count.,True
+bathroom_value_changed,int64,derived,audit_only,1 when known parsed bathroom count differs from original numeric count.,True
+occupancy_type,object,derived,structural_nominal,whole: explicit Alojamiento entero prefix or Todo el lugar; room: Habitación prefix; other: no explicit occupancy.,True
+property_group_corrected,object,derived,structural_nominal,"Explicit fixed map to apartment, house, guest_unit, cabin_or_bungalow, room_unspecified, other_or_unspecified. Separate from occupancy.",True
+property_mapping_unrecognized,int64,derived,audit_only,1 when raw type is absent from the fixed map; nominal fallback is other_or_unspecified.,True
+luxury_amenities_count,int64,derived,amenities,"Independent case/space-normalized match to archived luxury keyword family, at most one count per entry.",True
+basic_amenities_count,int64,derived,amenities,Independent match to archived basic keyword family; category counts can overlap.,True
+beach_amenities_count,int64,derived,amenities,Independent match to archived beach keyword family; category counts can overlap.,True
+available_amenities_count,int64,derived,amenities,Count observed list entries excluding No disponible. The scraped list may not represent all platform amenities.,True
+has_pool_corrected,int64,derived,amenities,"1 if an available list entry contains piscina, independent of luxury/basic/beach classification.",True
+amenities_parse_invalid,int64,derived,audit_only,Malformed or non-string list => feature counts missing; no false zero.,True
+host_portfolio_size_snapshot,int64,derived,host_snapshot_only,Count host's listings in full observed snapshot; not platform-wide inventory or strictly ex ante deployment feature.,True
+multi_listing_host_snapshot,int64,derived,host_snapshot_only,1 when host_portfolio_size_snapshot exceeds one.,True
+flag_bedrooms_gt_capacity,int64,derived,audit_only,"Deterministic structural plausibility flag; retains row and raw values, never based on price.",True
+flag_beds_gt_capacity,int64,derived,audit_only,"Deterministic structural plausibility flag; retains row and raw values, never based on price.",True
+flag_bedrooms_gt_beds,int64,derived,audit_only,"Deterministic structural plausibility flag; retains row and raw values, never based on price.",True
+flag_bedrooms_ge_10,int64,derived,audit_only,"Deterministic structural plausibility flag; retains row and raw values, never based on price.",True
+flag_bathrooms_gt_capacity,int64,derived,audit_only,"Deterministic structural plausibility flag; retains row and raw values, never based on price.",True
+flag_structural_extreme_any,int64,derived,audit_only,Union of specified structural inconsistency flags. No price threshold or automatic deletion.,True

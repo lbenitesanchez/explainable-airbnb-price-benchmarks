@@ -1,0 +1,749 @@
+{
+  "created_utc": "2026-10-20T16:00:38.037991+00:00",
+  "status": "REVIEWED_SELECTION_FOR_PUBLIC_REPOSITORY",
+  "selection_scope": "Minimal scientific aggregate outputs, four article figures, and restricted-input schema documentation",
+  "source_project": "airbnb_sustainability_revision_2026-10-19",
+  "price_unit": "Peruvian soles (PEN) per advertised night; original numeric values unchanged",
+  "licence": "Not selected; no third-party redistribution permission inferred",
+  "neighbourhood_rule": {
+    "filter": "n_listings >= 30 AND n_hosts >= 5",
+    "retained_neighbourhoods": 13,
+    "excluded_neighbourhoods": 25,
+    "retained_listing_count": 1419,
+    "excluded_listing_count": 279,
+    "minimum_retained_n_listings": 32,
+    "minimum_retained_n_hosts": 27,
+    "no_suppressed_labels_or_outcome_values_exported": true,
+    "interpretation": "Conservative publication choice; does not guarantee anonymisation against linkage with external data."
+  },
+  "marginal_disclosure_review": {
+    "rare_category_and_segment_tables_omitted_in_entirety": true,
+    "fine_partition_and_feature_category_margins_omitted": true,
+    "no_suppressed_neighbourhood_named_counts_or_residual_outcome_table": true,
+    "broad_overall_minus_retained_neighbourhood_residual": {
+      "neighbourhoods": 25,
+      "listings": 279
+    },
+    "scope": "No single omitted cell is recoverable by the simple complete-minus-all-other-category margins retained here; no formal privacy proof or arbitrary external-linkage guarantee is asserted."
+  },
+  "csv_selection": [
+    {
+      "source": "publication/tables/table_01_benchmark_oof_by_repeat.csv",
+      "output": "results_public/primary/table_01_benchmark_oof_by_repeat.csv",
+      "source_sha256": "c2e07b78da568cf0de6c903ef3cd8b3f2093a9a45b2dc64f8f6fd09154b74169",
+      "output_sha256": "c2e07b78da568cf0de6c903ef3cd8b3f2093a9a45b2dc64f8f6fd09154b74169",
+      "source_rows": 54,
+      "retained_rows": 54,
+      "removed_rows": 0,
+      "columns": [
+        "design",
+        "repeat",
+        "method",
+        "MAE",
+        "RMSE",
+        "R2",
+        "n",
+        "model_label"
+      ],
+      "columns_removed": [],
+      "filters": [],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": true
+    },
+    {
+      "source": "publication/tables/table_02_benchmark_descriptive.csv",
+      "output": "results_public/primary/table_02_benchmark_descriptive.csv",
+      "source_sha256": "726de3b37079bc463d8ea1d0351d8cfdee612c778d07e6ba7c925202652094b6",
+      "output_sha256": "726de3b37079bc463d8ea1d0351d8cfdee612c778d07e6ba7c925202652094b6",
+      "source_rows": 27,
+      "retained_rows": 27,
+      "removed_rows": 0,
+      "columns": [
+        "design",
+        "method",
+        "model_label",
+        "MAE_mean",
+        "MAE_min",
+        "MAE_max",
+        "RMSE_mean",
+        "RMSE_min",
+        "RMSE_max",
+        "R2_mean",
+        "R2_min",
+        "R2_max",
+        "n_repeats"
+      ],
+      "columns_removed": [],
+      "filters": [],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": true
+    },
+    {
+      "source": "publication/tables/table_03_ablations_paired_by_repeat.csv",
+      "output": "results_public/primary/table_03_ablations_paired_by_repeat.csv",
+      "source_sha256": "5cc25218e54f46aad2dee81da7ddd6274dd4a59208f356257553065316c91295",
+      "output_sha256": "e8b2c82137f58e97a7018d8edacf61602168136f9af30a52ad0f6508e761a0ef",
+      "source_rows": 36,
+      "retained_rows": 30,
+      "removed_rows": 6,
+      "columns": [
+        "design",
+        "repeat",
+        "method",
+        "MAE",
+        "RMSE",
+        "R2",
+        "n",
+        "MAE_full",
+        "RMSE_full",
+        "R2_full",
+        "n_full",
+        "MAE_variant_minus_full",
+        "MAE_full_minus_variant",
+        "RMSE_variant_minus_full",
+        "RMSE_full_minus_variant",
+        "R2_variant_minus_full",
+        "R2_full_minus_variant",
+        "contrast"
+      ],
+      "columns_removed": [],
+      "filters": [
+        {
+          "filter": "method != 'snapshot_H_sensitivity'",
+          "rows_retained": 30,
+          "reason": "Only the five primary block removals shown in the article; omit ancillary sensitivity."
+        }
+      ],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": false
+    },
+    {
+      "source": "publication/tables/table_04_ablations_descriptive.csv",
+      "output": "results_public/primary/table_04_ablations_descriptive.csv",
+      "source_sha256": "a822ec8749b04fb82c5fd14f1450d29203a12bc53ac7789146a6351aba8bb339",
+      "output_sha256": "d8626bf998a5ec8d7e2fb6160f4b43f98df19722eaf86d4beb6f04c910f854db",
+      "source_rows": 18,
+      "retained_rows": 15,
+      "removed_rows": 3,
+      "columns": [
+        "design",
+        "method",
+        "contrast",
+        "MAE_variant_minus_full_mean",
+        "MAE_variant_minus_full_min",
+        "MAE_variant_minus_full_max",
+        "RMSE_variant_minus_full_mean",
+        "RMSE_variant_minus_full_min",
+        "RMSE_variant_minus_full_max",
+        "R2_variant_minus_full_mean",
+        "R2_variant_minus_full_min",
+        "R2_variant_minus_full_max",
+        "n_repeats"
+      ],
+      "columns_removed": [],
+      "filters": [
+        {
+          "filter": "method != 'snapshot_H_sensitivity'",
+          "rows_retained": 15,
+          "reason": "Only the five primary block removals shown in the article; omit ancillary sensitivity."
+        }
+      ],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": false
+    },
+    {
+      "source": "publication/tables/table_05_intervals_by_repeat.csv",
+      "output": "results_public/primary/table_05_intervals_by_repeat.csv",
+      "source_sha256": "3957890d249011c3ef5c78cc67be6537ef0c093c84d732ff8d345558bb7649eb",
+      "output_sha256": "3957890d249011c3ef5c78cc67be6537ef0c093c84d732ff8d345558bb7649eb",
+      "source_rows": 12,
+      "retained_rows": 12,
+      "removed_rows": 0,
+      "columns": [
+        "design",
+        "repeat",
+        "interval_method",
+        "nominal_coverage",
+        "coverage",
+        "mean_width",
+        "median_width",
+        "MAE",
+        "RMSE",
+        "R2",
+        "n"
+      ],
+      "columns_removed": [],
+      "filters": [],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": true
+    },
+    {
+      "source": "publication/tables/table_07_core_family_selection_counts.csv",
+      "output": "results_public/primary/table_07_core_family_selection_counts.csv",
+      "source_sha256": "fe1e39c1c58c3ba85d6542a302c82c9127bf17660bd78a2f39ba4f6ace814792",
+      "output_sha256": "fe1e39c1c58c3ba85d6542a302c82c9127bf17660bd78a2f39ba4f6ace814792",
+      "source_rows": 12,
+      "retained_rows": 12,
+      "removed_rows": 0,
+      "columns": [
+        "design",
+        "selected_family_inner",
+        "selected_outer_folds",
+        "outer_folds_per_design",
+        "selection_fraction"
+      ],
+      "columns_removed": [],
+      "filters": [],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": true
+    },
+    {
+      "source": "publication/tables/table_08_intervals_descriptive.csv",
+      "output": "results_public/primary/table_08_intervals_descriptive.csv",
+      "source_sha256": "37bd03dd830ae1f37b8dc8fb6f3860118593994c76f183c28e847d8099f7fcc4",
+      "output_sha256": "37bd03dd830ae1f37b8dc8fb6f3860118593994c76f183c28e847d8099f7fcc4",
+      "source_rows": 6,
+      "retained_rows": 6,
+      "removed_rows": 0,
+      "columns": [
+        "design",
+        "interval_method",
+        "coverage_mean",
+        "coverage_min",
+        "coverage_max",
+        "mean_width_mean",
+        "mean_width_min",
+        "mean_width_max",
+        "median_width_mean",
+        "median_width_min",
+        "median_width_max",
+        "MAE_mean",
+        "MAE_min",
+        "MAE_max",
+        "RMSE_mean",
+        "RMSE_min",
+        "RMSE_max",
+        "R2_mean",
+        "R2_min",
+        "R2_max",
+        "n_repeats"
+      ],
+      "columns_removed": [],
+      "filters": [],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": true
+    },
+    {
+      "source": "publication/tables/table_s04_shap_block_concentration.csv",
+      "output": "results_public/primary/table_s04_shap_block_concentration.csv",
+      "source_sha256": "a384c89e0319ef955c32523f10a10af95b5a35fc27b23eded72d06ba040679ee",
+      "output_sha256": "a384c89e0319ef955c32523f10a10af95b5a35fc27b23eded72d06ba040679ee",
+      "source_rows": 15,
+      "retained_rows": 15,
+      "removed_rows": 0,
+      "columns": [
+        "design",
+        "repeat",
+        "fold",
+        "selected_family",
+        "block",
+        "sum_mean_abs_shap",
+        "n_transformed_features",
+        "attribution_share",
+        "explained_test_n"
+      ],
+      "columns_removed": [],
+      "filters": [],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": true
+    },
+    {
+      "source": "publication_secondary/tables/overall_point_descriptive_summary.csv",
+      "output": "results_public/secondary/overall_point_descriptive_summary.csv",
+      "source_sha256": "28708381c264bde682c5efa4af9df50e0c688877d4c694ff9e05b16f390cccec",
+      "output_sha256": "28708381c264bde682c5efa4af9df50e0c688877d4c694ff9e05b16f390cccec",
+      "source_rows": 6,
+      "retained_rows": 6,
+      "removed_rows": 0,
+      "columns": [
+        "design",
+        "weighting",
+        "n_repeats",
+        "n_listings",
+        "n_hosts",
+        "signed_bias_mean",
+        "signed_bias_min",
+        "signed_bias_max",
+        "MAE_mean",
+        "MAE_min",
+        "MAE_max",
+        "RMSE_mean",
+        "RMSE_min",
+        "RMSE_max",
+        "R2_mean",
+        "R2_min",
+        "R2_max",
+        "mean_observed_price_mean",
+        "mean_observed_price_min",
+        "mean_observed_price_max",
+        "mean_prediction_mean",
+        "mean_prediction_min",
+        "mean_prediction_max"
+      ],
+      "columns_removed": [],
+      "filters": [],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": true
+    },
+    {
+      "source": "publication_secondary/tables/host_portfolio_point_descriptive_summary.csv",
+      "output": "results_public/secondary/host_portfolio_point_descriptive_summary.csv",
+      "source_sha256": "47ee8a0c7c91dc2ef60c5c7b6ecc055dc1cbdfd8db4988c60eab5d38bf778e94",
+      "output_sha256": "47ee8a0c7c91dc2ef60c5c7b6ecc055dc1cbdfd8db4988c60eab5d38bf778e94",
+      "source_rows": 12,
+      "retained_rows": 12,
+      "removed_rows": 0,
+      "columns": [
+        "design",
+        "weighting",
+        "host_portfolio_group",
+        "n_repeats",
+        "n_listings",
+        "n_hosts",
+        "signed_bias_mean",
+        "signed_bias_min",
+        "signed_bias_max",
+        "MAE_mean",
+        "MAE_min",
+        "MAE_max",
+        "RMSE_mean",
+        "RMSE_min",
+        "RMSE_max",
+        "R2_mean",
+        "R2_min",
+        "R2_max",
+        "mean_observed_price_mean",
+        "mean_observed_price_min",
+        "mean_observed_price_max",
+        "mean_prediction_mean",
+        "mean_prediction_min",
+        "mean_prediction_max"
+      ],
+      "columns_removed": [],
+      "filters": [],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": true
+    },
+    {
+      "source": "publication_secondary/tables/host_portfolio_interval_descriptive_summary.csv",
+      "output": "results_public/secondary/host_portfolio_interval_descriptive_summary.csv",
+      "source_sha256": "0cb491b8950805814fb24646d9fe8c3704afe1f03c654ddfda1a948e4332ef67",
+      "output_sha256": "307436def3cad89b92c86df9686ef96f658036236349d3d7ee518294716e252d",
+      "source_rows": 24,
+      "retained_rows": 12,
+      "removed_rows": 12,
+      "columns": [
+        "design",
+        "weighting",
+        "interval_method",
+        "host_portfolio_group",
+        "n_repeats",
+        "n_listings",
+        "n_hosts",
+        "nominal_coverage",
+        "coverage_mean",
+        "coverage_min",
+        "coverage_max",
+        "mean_width_mean",
+        "mean_width_min",
+        "mean_width_max",
+        "median_width_mean",
+        "median_width_min",
+        "median_width_max",
+        "interval_point_signed_bias_mean",
+        "interval_point_signed_bias_min",
+        "interval_point_signed_bias_max",
+        "interval_point_MAE_mean",
+        "interval_point_MAE_min",
+        "interval_point_MAE_max",
+        "interval_point_RMSE_mean",
+        "interval_point_RMSE_min",
+        "interval_point_RMSE_max",
+        "interval_point_R2_mean",
+        "interval_point_R2_min",
+        "interval_point_R2_max",
+        "interval_point_mean_observed_price_mean",
+        "interval_point_mean_observed_price_min",
+        "interval_point_mean_observed_price_max",
+        "interval_point_mean_prediction_mean",
+        "interval_point_mean_prediction_min",
+        "interval_point_mean_prediction_max"
+      ],
+      "columns_removed": [],
+      "filters": [
+        {
+          "filter": "weighting == 'listing'",
+          "rows_retained": 12,
+          "reason": "Retain only the listing-weighted portfolio interval display in the supplement."
+        }
+      ],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": false
+    },
+    {
+      "source": "publication_secondary/tables/neighbourhood_point_by_repeat.csv",
+      "output": "results_public/secondary/neighbourhood_point_by_repeat.csv",
+      "source_sha256": "e1f388b2fe5db8df3029da449a510de95ad75f9572ad38531276ac5b85f59992",
+      "output_sha256": "af6eeac6e834ef6e8d84866b661a92a0f70e80485604db4f4021ccc5a03b4582",
+      "source_rows": 456,
+      "retained_rows": 78,
+      "removed_rows": 378,
+      "columns": [
+        "design",
+        "repeat",
+        "neighbourhood",
+        "interpretable_n_ge_30",
+        "weighting",
+        "n_listings",
+        "n_hosts",
+        "signed_bias",
+        "MAE",
+        "RMSE",
+        "R2",
+        "mean_observed_price",
+        "mean_prediction"
+      ],
+      "columns_removed": [],
+      "filters": [
+        {
+          "filter": "n_listings >= 30 AND n_hosts >= 5",
+          "rows_retained": 156,
+          "reason": "Conservative dissemination choice, not a formal anonymisation guarantee."
+        },
+        {
+          "filter": "weighting == 'listing'",
+          "rows_retained": 78,
+          "reason": "Minimal neighbourhood presentation consistent with Figure S2 and Table S9."
+        }
+      ],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": false
+    },
+    {
+      "source": "publication_secondary/tables/neighbourhood_point_descriptive_summary.csv",
+      "output": "results_public/secondary/neighbourhood_point_descriptive_summary.csv",
+      "source_sha256": "1db2e4c5a9d25a073aa4bd3b5640b0590896650537e6d6d64c14cc54bd477c38",
+      "output_sha256": "2839117e026f87a05bd12b1d489ceee911b6b380176252869e90518a6b725b63",
+      "source_rows": 228,
+      "retained_rows": 39,
+      "removed_rows": 189,
+      "columns": [
+        "design",
+        "weighting",
+        "neighbourhood",
+        "n_repeats",
+        "n_listings",
+        "n_hosts",
+        "interpretable_n_ge_30",
+        "signed_bias_mean",
+        "signed_bias_min",
+        "signed_bias_max",
+        "MAE_mean",
+        "MAE_min",
+        "MAE_max",
+        "RMSE_mean",
+        "RMSE_min",
+        "RMSE_max",
+        "R2_mean",
+        "R2_min",
+        "R2_max",
+        "mean_observed_price_mean",
+        "mean_observed_price_min",
+        "mean_observed_price_max",
+        "mean_prediction_mean",
+        "mean_prediction_min",
+        "mean_prediction_max"
+      ],
+      "columns_removed": [],
+      "filters": [
+        {
+          "filter": "n_listings >= 30 AND n_hosts >= 5",
+          "rows_retained": 78,
+          "reason": "Conservative dissemination choice, not a formal anonymisation guarantee."
+        },
+        {
+          "filter": "weighting == 'listing'",
+          "rows_retained": 39,
+          "reason": "Minimal neighbourhood presentation consistent with Figure S2 and Table S9."
+        }
+      ],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": false
+    },
+    {
+      "source": "publication_secondary/tables/neighbourhood_interval_by_repeat.csv",
+      "output": "results_public/secondary/neighbourhood_interval_by_repeat.csv",
+      "source_sha256": "f1e5963384b7d006b274e79e37e0ec48126985a4ab487533d2a73a2674c5f570",
+      "output_sha256": "27d6d677ccb04c511b58602ab32fa8e654d2bec7898c8dcf8f95d25ee2f9abdf",
+      "source_rows": 912,
+      "retained_rows": 156,
+      "removed_rows": 756,
+      "columns": [
+        "design",
+        "repeat",
+        "interval_method",
+        "neighbourhood",
+        "interpretable_n_ge_30",
+        "weighting",
+        "n_listings",
+        "n_hosts",
+        "nominal_coverage",
+        "coverage",
+        "mean_width",
+        "median_width",
+        "interval_point_signed_bias",
+        "interval_point_MAE",
+        "interval_point_RMSE",
+        "interval_point_R2",
+        "interval_point_mean_observed_price",
+        "interval_point_mean_prediction"
+      ],
+      "columns_removed": [],
+      "filters": [
+        {
+          "filter": "n_listings >= 30 AND n_hosts >= 5",
+          "rows_retained": 312,
+          "reason": "Conservative dissemination choice, not a formal anonymisation guarantee."
+        },
+        {
+          "filter": "weighting == 'listing'",
+          "rows_retained": 156,
+          "reason": "Minimal neighbourhood presentation consistent with Figure S2 and Table S9."
+        }
+      ],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": false
+    },
+    {
+      "source": "publication_secondary/tables/neighbourhood_interval_descriptive_summary.csv",
+      "output": "results_public/secondary/neighbourhood_interval_descriptive_summary.csv",
+      "source_sha256": "224fe1ca88db5b48ad12bcca7188a8fb0444c1f09f91dd29aba7a2a372840256",
+      "output_sha256": "bbf299213e952a61eeb8f1d99dfd08d597675096d677ec6664da630474455143",
+      "source_rows": 456,
+      "retained_rows": 78,
+      "removed_rows": 378,
+      "columns": [
+        "design",
+        "weighting",
+        "interval_method",
+        "neighbourhood",
+        "n_repeats",
+        "n_listings",
+        "n_hosts",
+        "nominal_coverage",
+        "interpretable_n_ge_30",
+        "coverage_mean",
+        "coverage_min",
+        "coverage_max",
+        "mean_width_mean",
+        "mean_width_min",
+        "mean_width_max",
+        "median_width_mean",
+        "median_width_min",
+        "median_width_max",
+        "interval_point_signed_bias_mean",
+        "interval_point_signed_bias_min",
+        "interval_point_signed_bias_max",
+        "interval_point_MAE_mean",
+        "interval_point_MAE_min",
+        "interval_point_MAE_max",
+        "interval_point_RMSE_mean",
+        "interval_point_RMSE_min",
+        "interval_point_RMSE_max",
+        "interval_point_R2_mean",
+        "interval_point_R2_min",
+        "interval_point_R2_max",
+        "interval_point_mean_observed_price_mean",
+        "interval_point_mean_observed_price_min",
+        "interval_point_mean_observed_price_max",
+        "interval_point_mean_prediction_mean",
+        "interval_point_mean_prediction_min",
+        "interval_point_mean_prediction_max"
+      ],
+      "columns_removed": [],
+      "filters": [
+        {
+          "filter": "n_listings >= 30 AND n_hosts >= 5",
+          "rows_retained": 156,
+          "reason": "Conservative dissemination choice, not a formal anonymisation guarantee."
+        },
+        {
+          "filter": "weighting == 'listing'",
+          "rows_retained": 78,
+          "reason": "Minimal neighbourhood presentation consistent with Figure S2 and Table S9."
+        }
+      ],
+      "retained_cells_lexically_identical": true,
+      "byte_identical_copy": false
+    },
+    {
+      "source": "data/variable_dictionary.csv",
+      "output": "data/restricted_input_schema.csv",
+      "source_sha256": "5341d3cf8b90c7c97f0eba9cdfbb05f40193a81b9f825af20ca0a3476778e63d",
+      "output_sha256": "52e11d6500635f7ab291ace793651873972af91cb12d8d322dda634ccda1cf88",
+      "source_rows": 60,
+      "retained_rows": 60,
+      "removed_rows": 0,
+      "columns_removed": [
+        "missing_n"
+      ],
+      "filters": [],
+      "retained_cells_lexically_identical": true,
+      "note": "Schema labels such as host_id/latitude name excluded fields; no ID or coordinate values are included."
+    }
+  ],
+  "omitted_candidate_csv": [
+    {
+      "source": "publication/tables/table_00_sample_categories.csv",
+      "source_rows": 9,
+      "source_sha256": "c89d53846ef88a5a362fccd6f2d5db88d82d494992beac9d7d7ba066ec54ee1c",
+      "reason": "Contains a category of 14 listings. Entire category table omitted, so unsuppressed category margins cannot recover it by subtraction."
+    },
+    {
+      "source": "publication/tables/table_00_sample_continuous.csv",
+      "source_rows": 6,
+      "source_sha256": "39a7e052ac1ffaf61e01acaa57c62e31e24983776966fc3f4654ee049f020b5b",
+      "reason": "Not needed for the minimal benchmark release; includes exact observed minima and maxima."
+    },
+    {
+      "source": "publication/tables/table_06_intervals_by_segment.csv",
+      "source_rows": 132,
+      "source_sha256": "b941b3cf565de809adeab2cecf4ba97a3fb1e41eed59eca233a91e6369cfefcc",
+      "reason": "Contains a segment of 14 listings. Entire segment table omitted to avoid complement recovery from the other segments and totals."
+    },
+    {
+      "source": "publication/tables/table_s01_fold_metrics.csv",
+      "source_rows": 270,
+      "source_sha256": "3a6751e92d36e454b6b2521b079bd5cfedf28bab233334af752b2836043eba54",
+      "reason": "Omit additional partition margins; pooled benchmark summaries are sufficient for the public selection."
+    },
+    {
+      "source": "publication/tables/table_s02_selected_families_by_fold.csv",
+      "source_rows": 18,
+      "source_sha256": "a4edf536bba150e09a73606c8e6b192736ebdbfd467d26b8cf39449f14914256",
+      "reason": "Minimal selection uses aggregate family-selection counts rather than per-fold details."
+    },
+    {
+      "source": "publication/tables/table_s03_shap_feature_attributions.csv",
+      "source_rows": 216,
+      "source_sha256": "d6790dacae86a020125ba76537a6c0530c2112fe68880a148dd56173986e940e",
+      "reason": "Feature-level one-hot neighbourhood categories may be rare; retain only block-level attribution aggregates."
+    },
+    {
+      "source": "publication_secondary/tables/host_portfolio_interval_by_repeat.csv",
+      "source_rows": 48,
+      "source_sha256": "ed67d7952e44f485e19cb31946daa7c38a7391709b3d45dad4c1281713cba207",
+      "reason": "Omit duplicate per-repetition/overall secondary margins not needed for the minimal article displays."
+    },
+    {
+      "source": "publication_secondary/tables/host_portfolio_point_by_repeat.csv",
+      "source_rows": 24,
+      "source_sha256": "f0856472f81ef03aeaeaf454bc5da8524d547dc100c5a5c182080ad0a394c762",
+      "reason": "Omit duplicate per-repetition/overall secondary margins not needed for the minimal article displays."
+    },
+    {
+      "source": "publication_secondary/tables/overall_interval_by_repeat.csv",
+      "source_rows": 24,
+      "source_sha256": "bf95012e42f68e7c480eaeb342d61df48b95dd4e8b8cd76f251da779b7fe58e0",
+      "reason": "Omit duplicate per-repetition/overall secondary margins not needed for the minimal article displays."
+    },
+    {
+      "source": "publication_secondary/tables/overall_interval_descriptive_summary.csv",
+      "source_rows": 12,
+      "source_sha256": "a0519c7dc88a5f71036ddf0112925e0f47d513628227d4d6f56f28be89842c8c",
+      "reason": "Omit duplicate per-repetition/overall secondary margins not needed for the minimal article displays."
+    },
+    {
+      "source": "publication_secondary/tables/overall_point_by_repeat.csv",
+      "source_rows": 12,
+      "source_sha256": "943f2e8bcabc2ec90b2276d75d7993cbc39a8bab9cc1886d1b32a566e474d2ee",
+      "reason": "Omit duplicate per-repetition/overall secondary margins not needed for the minimal article displays."
+    }
+  ],
+  "figures": [
+    {
+      "source": "submission/figures/Figure_1.png",
+      "output": "results_public/figures/Figure_1.png",
+      "source_sha256": "51ef768f353f872e490451a3f4247864a7f2a30bd85f6a8f74fd607e4dce7167",
+      "output_sha256": "51ef768f353f872e490451a3f4247864a7f2a30bd85f6a8f74fd607e4dce7167",
+      "byte_identical": true
+    },
+    {
+      "source": "submission/figures/Figure_1.pdf",
+      "output": "results_public/figures/Figure_1.pdf",
+      "source_sha256": "b2f88d482d2d5e2903ca54415554e37cef19cd4a54815dad0a2730ad267e101d",
+      "output_sha256": "b2f88d482d2d5e2903ca54415554e37cef19cd4a54815dad0a2730ad267e101d",
+      "byte_identical": true
+    },
+    {
+      "source": "submission/figures/Figure_2.png",
+      "output": "results_public/figures/Figure_2.png",
+      "source_sha256": "c38417ec565b0bce837073cf60a4ebc40b2aed5d5e998a71a7a78b4bc00f93e9",
+      "output_sha256": "c38417ec565b0bce837073cf60a4ebc40b2aed5d5e998a71a7a78b4bc00f93e9",
+      "byte_identical": true
+    },
+    {
+      "source": "submission/figures/Figure_2.pdf",
+      "output": "results_public/figures/Figure_2.pdf",
+      "source_sha256": "d90759e1e92ccb37dbb6e522b7dae5188c190f31c646928addd899969794c5eb",
+      "output_sha256": "d90759e1e92ccb37dbb6e522b7dae5188c190f31c646928addd899969794c5eb",
+      "byte_identical": true
+    },
+    {
+      "source": "submission/figures/Figure_S1.png",
+      "output": "results_public/figures/Figure_S1.png",
+      "source_sha256": "0cbf5e91bbdce9cf469e157034484132e3cbb513a28e6cb9517325a7fac3005b",
+      "output_sha256": "0cbf5e91bbdce9cf469e157034484132e3cbb513a28e6cb9517325a7fac3005b",
+      "byte_identical": true
+    },
+    {
+      "source": "submission/figures/Figure_S1.pdf",
+      "output": "results_public/figures/Figure_S1.pdf",
+      "source_sha256": "8ce08c823e770b1417a5ce18cd1dadbe7cc5cc3d9c956c5992f2d8572f345b6a",
+      "output_sha256": "8ce08c823e770b1417a5ce18cd1dadbe7cc5cc3d9c956c5992f2d8572f345b6a",
+      "byte_identical": true
+    },
+    {
+      "source": "submission/figures/Figure_S2.png",
+      "output": "results_public/figures/Figure_S2.png",
+      "source_sha256": "b45e599459e390c111fe48d7c34635ef9571e090af1504aff58349aefd46b71f",
+      "output_sha256": "b45e599459e390c111fe48d7c34635ef9571e090af1504aff58349aefd46b71f",
+      "byte_identical": true
+    },
+    {
+      "source": "submission/figures/Figure_S2.pdf",
+      "output": "results_public/figures/Figure_S2.pdf",
+      "source_sha256": "3163814890dd2c30067786d7dcfc1917d401c959bff9af6e84645ede6cffab58",
+      "output_sha256": "3163814890dd2c30067786d7dcfc1917d401c959bff9af6e84645ede6cffab58",
+      "byte_identical": true
+    }
+  ],
+  "source_json_policy": "No pre-existing project JSON copied; they contain unnecessary internal paths, private input fingerprints or broader margins. This manifest contains reviewed aggregate selection metadata only.",
+  "not_exported": [
+    "Listing or host identifiers and pseudonym values",
+    "Original titles/descriptions/amenity text",
+    "Precise coordinates and source URLs",
+    "Listing-level inputs and predictions",
+    "Fitted models",
+    "Individual SHAP arrays",
+    "Split membership",
+    "Small-neighbourhood names/counts/outcomes",
+    "Editorial drafts and author-fact/reviewer files"
+  ],
+  "source_integrity": {
+    "files_checked": 35,
+    "before_equals_after": true
+  },
+  "all_retained_csv_cells_lexically_identical": true,
+  "reproduction_limit": "Full numerical refitting requires separately authorised restricted input; these aggregates are not a replacement dataset."
+}

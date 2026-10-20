@@ -1,0 +1,9 @@
+# Restricted input data
+
+This directory supplies an [extended field dictionary](restricted_input_schema.csv), not observation-level data. It describes 60 source and derived fields, excluding empirical missing-value counts. It is broader than the 45-column portable model-ready CSV; it does not list 60 mandatory model inputs. The `in_restricted_export` flag describes the study's broader restricted export, rather than the portable model-ready schema. Identifiers, exact coordinates and original text are named for documentation only; their values are not distributed. Direct listing and host identifiers are not required by the `--prepared-csv` route, which uses stable row and host-group pseudonyms. Consult `code/prepare_data.py` and the execution instructions for the exact model-ready export.
+
+The study used a processed Lima–Callao Airbnb snapshot with 1,698 listings, 1,430 observed hosts and 38 recorded neighbourhoods. The source file records `last_scraped` as 17 December 2024 for 1,637 rows and 18 December 2024 for 61 rows. These recorded dates do not independently verify the upstream collection process. The verifiable archive begins with the processed CSV; the upstream capture and inherited distance calculations are not fully reconstructed. Advertised nightly price is in PEN, with no conversion.
+
+Full numerical reproduction requires separately authorised access to the restricted study input. No public download, data licence or approval to redistribute third-party source records is asserted. Contact the manuscript authors about access and applicable permissions; no automatic access commitment is made. Keep inputs outside this checkout.
+
+See [execution instructions](../docs/REPRODUCIBILITY.md), [diffusion rules](../docs/DATA_DIFFUSION.md) and [aggregate result definitions](../docs/RESULTS_DICTIONARY.md).
